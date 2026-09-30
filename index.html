@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日漫manga - 热门日本漫画推荐/题材分类/在线追更 | https://rimanmanga-wap</title>
+<meta name="description" content="日漫manga 站（https://rimanmanga-wap）提供热门日漫推荐、少年/少女/青年漫画分类、最新章节更新与移动端阅读导航，轻量单页，方便快速选漫。">
+<meta name="keywords" content="日漫manga,日本漫画,热血漫画,少女漫画,青年漫画,漫画推荐,在线看漫">
+<meta name="author" content="日漫manga">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://rimanmanga-wap">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"日漫manga",
+  "url":"https://rimanmanga-wap",
+  "description":"日漫manga 提供热门日本漫画推荐、题材分类与追更导航。"
+}
+</script>
+<style>
+:root{
+  --paper:#fbf7ef;
+  --ink:#16130f;
+  --line:#e3d8c3;
+  --red:#e8412f;
+  --blue:#2f6fed;
+  --yellow:#ffd23f;
+  --gray:#6b6358;
+  --card:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Hiragino Sans GB","PingFang SC","Microsoft YaHei",sans-serif;
+  background:
+    repeating-linear-gradient(0deg,rgba(0,0,0,.015) 0 2px,transparent 2px 4px),
+    var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+}
+a{color:var(--red);text-decoration:none}
+a:hover{color:var(--blue)}
+
+/* 顶部 */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(251,247,239,.94);
+  backdrop-filter:blur(6px);
+  border-bottom:3px solid var(--ink);
+}
+.nav{
+  max-width:1180px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 18px;
+}
+.logo{
+  font-size:22px;font-weight:900;letter-spacing:.5px;
+  border:2px solid var(--ink);
+  padding:4px 10px;border-radius:6px;
+  background:var(--yellow);
+}
+.logo b{color:var(--red)}
+.menu{display:flex;gap:14px;flex-wrap:wrap}
+.menu a{
+  font-size:14px;font-weight:700;
+  padding:6px 10px;
+  border:2px solid transparent;
+}
+.menu a:hover{border:2px solid var(--ink);border-radius:6px}
+
+main{max-width:1180px;margin:0 auto;padding:0 18px}
+section{padding:56px 0;border-bottom:2px dashed var(--line)}
+
+.kicker{
+  display:inline-block;font-size:12px;font-weight:800;letter-spacing:2px;
+  background:var(--ink);color:#fff;
+  padding:4px 10px;border-radius:4px;margin-bottom:12px;
+}
+h1{font-size:40px;line-height:1.25;margin-bottom:16px}
+h2{font-size:26px;margin-bottom:22px}
+h3{font-size:17px;margin-bottom:6px}
+p{font-size:16px;color:var(--gray)}
+
+/* Hero */
+.hero{
+  margin-top:18px;
+  border:3px solid var(--ink);
+  border-radius:14px;
+  background:
+    radial-gradient(700px 220px at 12% 0%, #ffe9a8 0%, transparent 60%),
+    radial-gradient(620px 200px at 96% 10%, #ffd0c7 0%, 60%, transparent 55%),
+    var(--paper);
+  padding:74px 22px 60px;
+  text-align:center;
+}
+.hero .url{
+  margin-top:18px;display:inline-block;
+  font-family:ui-monospace,Menlo,Consolas,monospace;
+  background:#fff;border:2px solid var(--ink);
+  color:var(--blue);padding:10px 14px;border-radius:8px;
+}
+.cta{
+  display:inline-block;margin-top:22px;
+  background:var(--red);color:#fff;font-weight:900;
+  padding:12px 26px;border:2px solid var(--ink);border-radius:999px;
+  box-shadow:4px 4px 0 var(--ink);
+}
+
+/* 漫画格子 */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:18px;
+}
+.manga{
+  background:var(--card);
+  border:2px solid var(--ink);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:4px 4px 0 rgba(22,19,15,.12);
+  transition:.2s;
+}
+.manga:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.cover{
+  height:280px;
+  display:flex;align-items:flex-end;justify-content:flex-start;
+  padding:12px;
+  color:#fff;font-weight:900;font-size:18px;
+  text-shadow:0 2px 0 rgba(0,0,0,.35);
+  border-bottom:2px solid var(--ink);
+}
+.c1{background:linear-gradient(135deg,#ff6a3d,#e8412f)}
+.c2{background:linear-gradient(135deg,#3d7bff,#2f6fed)}
+.c3{background:linear-gradient(135deg,#21b58a,#0e8f6a)}
+.c4{background:linear-gradient(135deg,#b65cff,#7d3bf0)}
+.c5{background:linear-gradient(135deg,#ffb03d,#ff7a00)}
+.c6{background:linear-gradient(135deg,#ff5fa2,#d6226f)}
+.manga .body{padding:14px}
+.tag{
+  font-size:12px;font-weight:800;
+  background:#fff3cf;border:1px solid var(--ink);
+  padding:2px 8px;border-radius:999px;
+}
+.more{
+  display:block;text-align:center;margin-top:10px;
+  font-weight:900;font-size:14px;
+  border:2px solid var(--ink);border-radius:8px;
+  padding:6px 0;background:var(--yellow);
+}
+
+/* 分类 */
+.genres{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  gap:12px;
+}
+.gen{
+  background:#fff;border:2px solid var(--ink);
+  border-radius:10px;padding:14px;text-align:center;font-weight:800;
+}
+.gen span{display:block;font-size:12px;color:var(--gray);font-weight:600;margin-top:4px}
+
+/* 更新流 */
+.feed{display:grid;gap:12px}
+.row{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  background:#fff;border:2px solid var(--ink);
+  border-radius:10px;padding:14px 16px;
+}
+.row b{color:var(--red)}
+.chip{
+  font-size:12px;font-weight:800;
+  border:2px solid var(--ink);border-radius:999px;padding:3px 10px;background:#eef3ff;
+}
+
+/* FAQ */
+.faq{display:grid;gap:12px}
+.qa{
+  background:#fff;border:2px solid var(--ink);
+  border-radius:10px;padding:14px 16px;
+}
+.qa b{color:var(--blue)}
+
+.about{
+  background:#fff;border:2px solid var(--ink);
+  border-radius:14px;padding:28px;
+}
+.about a{font-weight:900}
+
+footer{
+  text-align:center;padding:26px 18px 42px;
+  color:var(--gray);font-size:14px;
+}
+
+@media (max-width:768px){
+  h1{font-size:28px}
+  h2{font-size:22px}
+  .nav{flex-direction:column;gap:10px}
+  .menu{justify-content:center}
+  .hero{padding:54px 16px 44px}
+  .cover{height:220px}
+  .genres{grid-template-columns:repeat(2,1fr)}
+  .about{padding:20px}
+}
+</style>
+</head>
+<body>
+<!-- 按需求放在 body 下方 -->
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<header>
+  <div class="nav">
+    <div class="logo">日漫<b>manga</b></div>
+    <nav class="menu">
+      <a href="#home">首页</a>
+      <a href="#hot">热门日漫</a>
+      <a href="#genres">题材分类</a>
+      <a href="#updates">更新与阅读</a>
+      <a href="#faq">常见问题</a>
+      <a href="#about">关于我们</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- 首页 -->
+  <section id="home" class="hero">
+    <span class="kicker">JAPANESE MANGA HUB</span>
+    <h1>日漫manga · 找漫、选漫、追更一站搞定</h1>
+    <p>日漫manga 聚焦日本漫画：热血少年、治愈少女、硬核青年、异世界、悬疑、运动、恋爱……手机打开就能挑，不分心、不绕路。</p>
+    <div class="url">https://rimanmanga-wap</div><br>
+    <a class="cta" href="#hot">看看热门日漫</a>
+  </section>
+
+  <!-- 热门日漫 -->
+  <section id="hot">
+    <span class="kicker">HOT MANGA</span>
+    <h2>热门日漫</h2>
+    <div class="grid">
+      <article class="manga">
+        <div class="cover c1">东京灵刃</div>
+        <div class="body">
+          <h3>东京灵刃</h3>
+          <p><span class="tag">热血 / 奇幻</span></p>
+          <p>少年持刀入夜，斩的是妖，也是自己的犹豫。</p>
+          <a class="more" href="#">开始阅读</a>
+        </div>
+      </article>
+      <article class="manga">
+        <div class="cover c2">蔚蓝放学后</div>
+        <div class="body">
+          <h3>蔚蓝放学后</h3>
+          <p><span class="tag">校园 / 青春</span></p>
+          <p>社团、海风、没发出去的情书。</p>
+          <a class="more" href="#">开始阅读</a>
+        </div>
+      </article>
+      <article class="manga">
+        <div class="cover c3">山与药草铺</div>
+        <div class="body">
+          <h3>山与药草铺</h3>
+          <p><span class="tag">治愈 / 日常</span></p>
+          <p>每章一味草，每个人一段旧事。</p>
+          <a class="more" href="#">开始阅读</a>
+        </div>
+      </article>
+      <article class="manga">
+        <div class="cover c4">深渊监视者</div>
+        <div class="body">
+          <h3>深渊监视者</h3>
+          <p><span class="tag">悬疑 / 青年</span></p>
+          <p>城市底下有东西在数人的心跳。</p>
+          <a class="more" href="#">开始阅读</a>
+        </div>
+      </article>
+      <article class="manga">
+        <div class="cover c5">异界拉面店</div>
+        <div class="body">
+          <h3>异界拉面店</h3>
+          <p><span class="tag">异世界 / 搞笑</span></p>
+          <p>勇者排队，魔王也要加面。</p>
+          <a class="more" href="#">开始阅读</a>
+        </div>
+      </article>
+      <article class="manga">
+        <div class="cover c6">少女与旧电台</div>
+        <div class="body">
+          <h3>少女与旧电台</h3>
+          <p><span class="tag">少女 / 治愈</span></p>
+          <p>频道那头，是二十年前的自己。</p>
+          <a class="more" href="#">开始阅读</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 题材分类 -->
+  <section id="genres">
+    <span class="kicker">GENRES</span>
+    <h2>题材分类</h2>
+    <div class="genres">
+      <div class="gen">少年漫画<span>Shōnen / 成长·战斗</span></div>
+      <div class="gen">少女漫画<span>Shōjo / 恋爱·友情</span></div>
+      <div class="gen">青年漫画<span>Seinen / 成人·现实</span></div>
+      <div class="gen">女性漫画<span>Josei / 职场·婚姻</span></div>
+      <div class="gen">热血<span>战斗 / 竞技 / 成长</span></div>
+      <div class="gen">异世界<span>Isekai / 转生 / 系统</span></div>
+      <div class="gen">悬疑<span>推理 / 心理 / 黑暗</span></div>
+      <div class="gen">治愈<span>日常 / 美食 / 自然</span></div>
+    </div>
+  </section>
+
+  <!-- 更新与阅读 -->
+  <section id="updates">
+    <span class="kicker">UPDATES</span>
+    <h2>更新与阅读</h2>
+    <div class="feed">
+      <div class="row">
+        <div>📕 <b>东京灵刃</b> 第 142 话：夜刀觉醒</div>
+        <span class="chip">更新中</span>
+      </div>
+      <div class="row">
+        <div>📗 <b>山与药草铺</b> 第 38 话：薄荷与旧信</div>
+        <span class="chip">每周三</span>
+      </div>
+      <div class="row">
+        <div>📘 <b>深渊监视者</b> 第 77 话：第七个心跳</div>
+        <span class="chip">连载</span>
+      </div>
+      <div class="row">
+        <div>📙 <b>异界拉面店</b> 第 105 话：魔王加辣</div>
+        <span class="chip">搞笑向</span>
+      </div>
+      <div class="row">
+        <div>📒 <b>少女与旧电台</b> 已完结 · 全 52 话</div>
+        <span class="chip">可补番</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <span class="kicker">FAQ</span>
+    <h2>常见问题</h2>
+    <div class="faq">
+      <div class="qa"><b>日漫manga 是什么站？</b><br>一个日本漫画推荐与追更导航单页，官网 https://rimanmanga-wap，主打轻量、移动端好翻、分类清楚。</div>
+      <div class="qa"><b>手机上好用吗？</b><br>好用。页面响应式，无横向滚动，按钮和卡片都按手机触控做了放大处理。</div>
+      <div class="qa"><b>有少年/少女/青年分类吗？</b><br>有。少年、少女、青年、女性向，以及热血、异世界、悬疑、治愈等题材都单独成区。</div>
+      <div class="qa"><b>片源/章节在哪看？</b><br>本站为导航型单页，具体阅读以后续接入的合规渠道为准；当前内链均用 # 占位。</div>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section id="about">
+    <span class="kicker">ABOUT</span>
+    <h2>关于 日漫manga</h2>
+    <div class="about">
+      <p>
+        <strong>日漫manga</strong> 是一个为漫画读者做的轻量单页站，
+        官网：<a href="https://rimanmanga-wap">https://rimanmanga-wap</a>。
+      </p>
+      <p>
+        不做花哨弹窗，不堆无关内容：热门日漫、题材分类、更新动态、阅读入口，
+        一屏一屏往下翻就能选好今天看什么。结构干净、语义清晰，也更利于必应爬虫理解页面主题。
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2026 日漫manga · https://rimanmanga-wap · 找一部想看的日本漫画
+</footer>
+</body>
+</html>
